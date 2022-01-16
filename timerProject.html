@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(167, 179, 179);
+            display: grid;
+            place-items: center;
+        }
+        .item{
+            background-color: blue;
+            padding: 50px;
+            color: white;
+            width: 50vw;
+            box-shadow: 10px 10px 15px black;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <h1 id="h">Time Left for New Year 2022</h1>
+            <h1 id="timer"></h1>
+        </div>
+    </div>
+    <script>
+        function timer(){
+            var targetTime = new Date("2022 1 1 0:0:0");
+            var si = setInterval(() => {
+                var ct = new Date()
+                var diff = targetTime-ct;
+                if(diff>0){
+                    var day = Math.floor(diff/(1000*60*60*24))
+                    var hour = Math.floor((diff%(1000*60*60*24)/(1000*60*60)))
+                    var minute = Math.floor((diff%(1000*60*60)/(1000*60)))
+                    var second = Math.floor((diff%(1000*60)/(1000)))
+                    var msg=""
+                    if(day<10){
+                        msg=msg+"0"
+                    }
+                    msg=msg+day+":"
+
+                    if(hour<10){
+                        msg=msg+"0"
+                    }
+                    msg=msg+hour+":"
+
+                    if(minute<10){
+                        msg=msg+"0"
+                    }
+                    msg=msg+minute+":"
+
+                    if(second<10){
+                        msg=msg+"0"
+                    }
+                    msg=msg+second;
+                    document.getElementById("timer").innerHTML=msg
+                }
+                else{
+                    document.getElementById('h').innerHTML=""
+                    document.getElementById('timer').innerHTML="Happy New Year 2020!!!!!"
+                    clearInterval(si)
+                }
+            }, 1000);
+        }
+        timer()
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="submit" class="btn" onclick="fun()">Change Image</button> 
+    <button type="submit" class="btn" onclick="fun2()">Change Height and Width</button> 
+    <img src="pic.jpg" id="image">
+    <script>
+        var b = document.getElementsByClassName("btn")
+        // b[0].style.backgroundColor="green"
+        // b[0].style.color="white"
+        // b[0].style.fontSize="30px"
+        // b[0].style.padding="20px"
+        // b[1].style.backgroundColor="purple"
+        // b[1].style.color="white"
+        // b[1].style.fontSize="30px"
+        // b[1].style.padding="20px"
+        var color =["green","purple"]
+        for(let i=0;i<b.length;i++){
+            b[i].style.backgroundColor=color[i]
+            b[i].style.color="white"
+            b[i].style.fontSize="30px"
+            b[i].style.padding="20px"
+        }
+        function fun(){
+            var img = document.getElementById("image")
+            img.src="pic2.jpg"
+        }
+        function fun2(){
+            var img = document.getElementById("image")
+            img.style.width="500px"
+            img.style.height="500px"
+        }
+    </script>   
+</body>
+</html>

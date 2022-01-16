@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="div">
+    <p id="p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate odit quod eos, soluta ipsam voluptas hic exercitationem velit voluptatum aperiam id assumenda incidunt voluptate maxime cum dignissimos quia esse reprehenderit dolore cumque nemo! Tempora iure nihil corrupti voluptatem libero praesentium soluta atque vel reiciendis aperiam. Facilis vitae perferendis eius nemo?</p>
+    <button type="submit" onclick="fun1()">Click to change Color</button>
+    <button type="submit" onclick="fun2()">Click to Stop Color Change</button>
+    <p id="p2"></p>
+   </div>
+</body>
+<script>
+    var p=document.getElementById("p")
+    var p2=document.getElementById("p2")
+    var st;
+    var si;
+    function changeColor(){
+        p.style.color="red"
+    }
+    function fun1(){
+        st=setTimeout(()=>{
+            p.style.color="red"
+        },5000)
+        num=4;
+        si = setInterval(() => {
+            if(num==0){
+                clearInterval(si)
+                document.getElementById("div").removeChild(p2)
+            }
+            p2.innerHTML="Color will change in "+num+" seconds"
+            num--
+        }, 1000);
+   }
+   function fun2(){
+       clearTimeout(st)
+       clearInterval(si)
+       p2.innerHTML="You Cancel Color Change"
+   }
+</script>
+</html>
+
+<!-- 
+setTimeout()    :   perform some task after a spcific time
+clearTimeout()  :   it clear setTimeout instance
+setInterval()   :   it perform some task after a specific time 
+                    and repeat this tas after every specific time
+clearInterval() :   clear setInterval instance
+--> 

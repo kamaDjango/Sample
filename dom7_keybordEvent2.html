@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: azure;
+            padding: 50px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            width: 83%;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form name="myform" method="post" onsubmit="fun4();return false">
+        <input type="text" name="name" id="name"
+        placeholder="Enter Yor Message"
+        onkeydown="fun1()"
+        onkeypress="fun2()"
+        onkeyup="fun3()">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        function fun1(){
+            document.getElementById('name')
+            .style.backgroundColor="lightgreen"
+        }
+        function fun2(){
+            document.getElementById('name')
+            .style.backgroundColor="pink"
+        }
+        function fun3(){
+            document.getElementById('name')
+            .style.backgroundColor="white"
+        }
+        function fun4(){
+            var msg = document.forms["myform"]["name"].value
+            alert(msg)
+        }
+    </script>
+</body>
+</html>

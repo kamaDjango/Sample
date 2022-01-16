@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <script>
+            var p=parseInt(prompt("Enter the Principal Amount : "))
+            var r=parseInt(prompt("Enter the Rate : "))
+            var t=parseInt(prompt("Enter the Time : "))
+            var si=p*r*t/100
+            var total=p+si
+            var emi=total/(t*12)
+            document.write("Principal Amount = ",p);
+            document.write("<br>Rate             = "+r);
+            document.write("<br>Time             = "+t);
+            document.write("<br>Simple Interest  = ",Math.round(si));
+            document.write("<br>Final Amount     = ",Math.round(total));
+            document.write("<br>EMI              = ",Math.round(emi));   
+        </script>
+    </body>
+</html>

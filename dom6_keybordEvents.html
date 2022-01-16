@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: azure;
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 15%;
+            font-size: 30px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+        }
+        p{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form name="myform" method="post" onsubmit="fun();return false">
+        <label>Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Your Name"
+            onfocus="document.getElementById('name').style.backgroundColor='pink'"
+            onblur="document.getElementById('name').style.backgroundColor='white'">
+        <p id="namep"></p>
+        <label>User Name</label>
+        <input type="text" name="username" id="username" placeholder="Enter Your User Name"
+            onfocus="document.getElementById('username').style.backgroundColor='pink'"
+            onblur="document.getElementById('username').style.backgroundColor='white'">
+        <p id="usernamep"></p>
+        <label>Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter Your Name Email Id"
+            onfocus="document.getElementById('email').style.backgroundColor='pink'"
+            onblur="document.getElementById('email').style.backgroundColor='white'">
+        <p id="emailp"></p>
+        <label>Phone</label>
+        <input type="text" name="phone" id="phone" placeholder="Enter Your Phone Number"
+            onfocus="document.getElementById('phone').style.backgroundColor='pink'"
+            onblur="document.getElementById('phone').style.backgroundColor='white'">
+        <p id="phonep"></p>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function fun(){
+            var name = document.getElementById("name").value
+            var flag=false
+            if(name.length<3){
+                flag=true
+                document.getElementById("namep").innerHTML="Please Enter a valid Name"
+            }
+            var username = document.getElementById("username").value
+            if(username.length<3){
+                flag=true
+                document.getElementById("usernamep").innerHTML="Please Enter a valid User Name"
+            }
+            var email = document.getElementById("email").value
+            if(email.length<11){
+                flag=true
+                document.getElementById("emailp").innerHTML="Please Enter a valid Email Id"
+            }
+            var phone = document.getElementById("phone").value
+            if(phone.length<10){
+                flag=true
+                document.getElementById("phonep").innerHTML="Please Enter a valid Valid Phone"
+            }
+            if(flag==false){
+                alert("Successfull")
+                Location.reload()
+            }
+        }
+    </script>
+</body>
+
+</html>

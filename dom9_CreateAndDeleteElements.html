@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 75vw;
+            display: grid;
+            place-items: center;
+        }
+        button{
+            background-color: green;
+            color: white;
+            font-size: 25px;
+            padding: 15px;
+            width: 50vh;
+        }
+        .button{
+            display: flex;
+        }
+        .p{
+            background-color: navy;
+            color: white;
+            font-size: 20px;
+            padding: 10px 50px;
+            text-transform:capitalize;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="button">
+            <button type="submit" onclick="fun1()">Create a Paragrapg</button>
+            <button type="submit" onclick="fun2()">Delete First Paragrapg</button>
+        </div>
+    </div>
+    <script>
+        var count=1;
+        var div = document.getElementById("container")
+        function fun1(){
+            var p = document.createElement("p")
+            var text = document.createTextNode("This is a Paragraph "+count)
+            p.classList.add("p")
+            p.id="p"+count
+            count++;
+            p.append(text)
+            div.appendChild(p)
+        }
+        function fun2(){
+            div.removeChild(div.childNodes[3])
+        }
+    </script>
+</body>
+</html>

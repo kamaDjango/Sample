@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 40vw;
+            height: 40vh;
+            background-color: blue;
+            display: grid;
+            place-items: center;
+        }
+        .child1{
+            width: 30vw;
+            height: 30vh;
+            background-color: green;
+            display: grid;
+            place-items: center;
+        }
+        .child2{
+            width: 20vw;
+            height: 20vh;
+            background-color: red;
+            display: grid;
+            place-items: center;
+        }
+        .child3{
+            width: 10vw;
+            height: 10vh;
+            background-color: purple;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="p">
+        <div class="child1" id="c1">
+            <div class="child2" id="c2">
+                <div class="child3" id="c3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function fun1(){
+            alert("Parent Event is Called")
+        }
+        function fun2(){
+            alert("Child1 Event is Called")
+        }
+        function fun3(){
+            alert("Child2 Event is Called")
+        }
+        function fun4(){
+            alert("Child3 Event is Called")
+        }
+        var p = document.getElementById("p")
+        var c1 = document.getElementById("c1")
+        var c2 = document.getElementById("c2")
+        var c3 = document.getElementById("c3")
+        p.addEventListener('click',fun1,true)
+        c1.addEventListener('click',fun2,true)
+        c2.addEventListener('click',fun3,true)
+        c3.addEventListener('click',fun4,true)
+    </script>
+</body>
+</html>

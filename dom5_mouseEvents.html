@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 500px;
+            height: 500px;
+            color: navy;
+            background-color: aqua;
+            display: grid;
+            place-items: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="main"
+                      onclick="fun()"
+                      onmousedown="fun1()"
+                      onmouseenter="fun2()"
+                      onmouseover="fun3()"
+                      onmouseleave="fun4()"
+                      onmousemove="fun5()"
+                      onmouseout="fun6()"
+                      onmouseup="fun7()"
+                      onmousewheel="fun8()">
+        No Event
+    </div>
+    <script>
+        var div = document.getElementById("main")
+        function fun() {
+            main.style.backgroundColor="green"
+            main.style.color="white"
+            main.innerHTML = "Mouse clicked"
+            console.log("mouse clicked");
+        }
+        function fun1() {
+            main.style.backgroundColor="navy"
+            main.style.color="white"
+            main.innerHTML = "Mouse Key Down"
+            console.log("mouse key down");
+        }
+        function fun2() {
+            main.style.backgroundColor="yellow"
+            main.style.color="white"
+            main.innerHTML = "Mouse Enter"
+            console.log("mouse Enter");
+        }
+        function fun3() {
+            main.style.backgroundColor="hotpink"
+            main.style.color="navy"
+            main.innerHTML = "Mouse over"
+            console.log("mouse over");
+        }
+        function fun4() {
+            main.style.backgroundColor="red"
+            main.style.color="white"
+            main.innerHTML = "Mouse leave"
+            console.log("mouse leave");
+        }
+        function fun5() {
+            main.style.backgroundColor="skyblue"
+            main.style.color="white"
+            main.innerHTML = "Mouse move"
+            console.log("mouse move");
+        }
+        function fun6() {
+            main.style.backgroundColor="purple"
+            main.style.color="white"
+            main.innerHTML = "Mouse out"
+            console.log("mouse out");
+        }
+        function fun7() {
+            main.style.backgroundColor="black"
+            main.style.color="white"
+            main.innerHTML = "Mouse up"
+            console.log("mouse up");
+        }
+        function fun8() {
+            main.style.backgroundColor="cyan"
+            main.style.color="red"
+            main.innerHTML = "Mouse wheel"
+            console.log("mouse wheel");
+        }
+    </script>
+</body>
+</html>

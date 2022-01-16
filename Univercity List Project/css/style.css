@@ -1,0 +1,50 @@
+.container{
+    width: 100vw;
+    background-color: rgb(255, 249, 244);
+}
+.first{
+    height: 10vh;
+    width: 100vw;
+    background-color: green;
+    display: grid;
+    place-content: center;
+}
+input,button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+input{
+    width: 60%;
+}
+button{
+    width: 30%;
+    background-color: orange;
+}
+.second{
+    margin-top: 10px;
+}
+table{
+    border-collapse: collapse;
+    width: 100vw;
+}
+tr{
+    background-color: rgb(180, 114, 180);
+    font-size: 20px;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: rgb(191, 196, 191);
+    color: navy;
+}
+a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+td,th{
+    padding: 15px;
+}
+th{
+    text-align: left;
+}
